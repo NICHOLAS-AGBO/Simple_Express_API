@@ -1,16 +1,19 @@
 const express = require("express");
+const dotenv = require('dotenv');
 const app = express();
 const helmet = require("helmet");
 const nodemailer = require('nodemailer');
 const path = require('path');
+
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
     host: "dreamworld-company.com",
     port: 465,
     secure: true,
     auth: {
-        user: "info@dreamworld-company.com",
-        pass: "dreamwor222",
+        user: process.env.USER,
+        pass: process.env.PASS,
     },
 });
 
