@@ -8,7 +8,7 @@ const path = require('path');
 dotenv.config();
 
 const transporter = nodemailer.createTransport({
-    host: "dreamworld-company.com",
+    host: "domain.com",
     port: 465,
     secure: true,
     auth: {
@@ -37,8 +37,8 @@ app.get("/",(req,res)=>{
 app.get('/mail',(req,res)=>{
 
     transporter.sendMail({
-        from: '"Nicholas" <info@dreamworld-company.com>', // sender address
-        to: "nnajichristabel54@gmail.com, agbonicholas3@gmail.com", // list of receivers
+        from: '"Nicholas Agbo" <john@email.com>', // sender address
+        to: "nnaji@gmail.com, johndoe@gmail.com", // list of receivers
         subject: "Hello ✔", // Subject line
         text: "Hello world?", // plain text body
         html: "<b>Hello world?</b>", // html body
